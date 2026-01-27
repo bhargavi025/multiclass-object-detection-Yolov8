@@ -1,0 +1,48 @@
+Step 1: Image Collection
+Tank and artillery images were collected from publicly available online sources.
+Images were selected with different angles, lighting conditions, and backgrounds to improve dataset diversity.
+
+Step 2: Image Annotation
+All collected images were manually annotated using labeImg.
+Bounding boxes were drawn around tanks and artillery objects.
+Annotations were exported in YOLO format (.txt files).
+
+Step 3: Dataset Organization
+The annotated dataset was organized into training and validation folders.
+
+dataset/
+   train/
+      images/
+      labels/
+   val/
+      images/
+      labels/
+
+A dataset configuration file (data.yaml) was created to define class names and dataset paths.
+
+
+Step 5: Model Selection
+YOLOv8 pretrained model was selected as the base model.
+
+Step 6: Model Training
+The model was trained using the custom dataset.
+Training parameters such as epochs, batch size, and image size were configured.
+GPU acceleration was enabled for faster training.
+
+Step 7: Model Evaluation
+The trained model was validated on unseen images.
+
+Step 8: Integration of Person Detection
+A pretrained YOLO model was used for detecting persons.
+Outputs from the custom tank-artillery model and pretrained person model were combined during inference.
+
+Step 9: Object Tracking
+A tracking algorithm (byte track) was integrated to assign unique IDs to detected objects across frames.
+
+Step 10: Video Inference
+The combined detection and tracking pipeline was applied to video input.
+The system detected tanks, artillery, and persons simultaneously in real time.
+
+Step 11: Visualization
+Bounding boxes, class labels, confidence scores, and tracking IDs were drawn on video frames.
+
