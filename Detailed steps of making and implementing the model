@@ -20,29 +20,28 @@ dataset/
 
 A dataset configuration file (data.yaml) was created to define class names and dataset paths.
 
-
-Step 5: Model Selection
+Step 4: Model Selection
 YOLOv8 pretrained model was selected as the base model.
 
-Step 6: Model Training
+Step 5: Model Training
 The model was trained using the custom dataset.
 Training parameters such as epochs, batch size, and image size were configured.
 GPU acceleration was enabled for faster training.
 
-Step 7: Model Evaluation
+Step 6: Model Evaluation
 The trained model was validated on unseen images.
 
-Step 8: Integration of Person Detection
+Step 7: Integration of Person Detection
 A pretrained YOLO model was used for detecting persons.
 Outputs from the custom tank-artillery model and pretrained person model were combined during inference.
 
-Step 9: Object Tracking
+Step 8: Object Tracking
 A tracking algorithm (byte track) was integrated to assign unique IDs to detected objects across frames.
 
-Step 10: Video Inference
+Step 9: Video Inference
 The combined detection and tracking pipeline was applied to video input.
 The system detected tanks, artillery, and persons simultaneously in real time.
 
-Step 11: Visualization
+Step 10: Visualization
 Bounding boxes, class labels, confidence scores, and tracking IDs were drawn on video frames.
 
