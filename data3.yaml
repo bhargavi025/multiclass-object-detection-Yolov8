@@ -1,0 +1,7 @@
+train : datasets3/train/images
+val : datasets3/validate/images
+test : datasets3/test/images
+
+nc : 2
+
+names : ['tank','artillery']
