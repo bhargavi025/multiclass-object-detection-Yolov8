@@ -1,8 +1,8 @@
 import cv2
 from ultralytics import YOLO
 
-person_model = YOLO("C:\\Users\\Bhargavi\\Documents\\yolov8n.pt")
-tank_model = YOLO("C:\\Users\\Bhargavi\\OneDrive\\Documents\\yolo codes\\runs\\detect\\train6\\weights\\best.pt")
+person_model = YOLO("models/yolov8n.pt")
+tank_model = YOLO("runs\\detect\\train\\weights\\best.pt")
 
 cap = cv2.VideoCapture("D:\\tanks.mp4")
 
@@ -23,7 +23,7 @@ while cap.isOpened():
     
     #predict the above two models
     person = person_model.predict(frame,conf=0.4,classes=[0])[0]
-    tank = tank_model.track(frame,conf=0.25,iou=0.7,persist=True,tracker="C:\\Users\\Bhargavi\\Documents\\bytetrack.yaml")[0]
+    tank = tank_model.track(frame,conf=0.25,iou=0.7,persist=True,tracker="\\bytetrack.yaml")[0]
     
     #draw bounding boxes using .plot()
     if person.boxes.xyxy.numel()>0:
@@ -48,4 +48,5 @@ while cap.isOpened():
 cap.release()
 if save_video:
     output.release()
+
 cv2.destroyAllWindows()
