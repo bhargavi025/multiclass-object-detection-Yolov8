@@ -42,11 +42,6 @@ This project addresses this by training a custom model specifically for armored 
 
 ---
 
-## Results
-
-### Sample Outputs
-(Add your images here)
-
 ### Performance
 - Real-time inference enabled (GPU accelerated)
 - Model: YOLOv8 (custom-trained + pretrained)
